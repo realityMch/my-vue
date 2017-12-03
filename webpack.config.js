@@ -50,7 +50,7 @@ module.exports = {
     noInfo: true,
     overlay: true,
     proxy: {
-      '/book': {
+      '/book/': {
         target: 'http://localhost:3000/',
         secure: false,
       }

@@ -1,6 +1,16 @@
 <template>
   <div id="app">
     <h2>{{title}}</h2>
+    <div>
+      <ul>
+        <li>
+          <router-link to="/bookput"><div>图书入库</div></router-link>
+        </li>
+      </ul>
+    </div>
+    <div class="content">
+      <router-view></router-view>
+    </div>
     <table class="hovertable">
       <tr>
         <th>ID</th><th>书名</th><th>作者</th><th>出版社</th><th>价格</th><th>简介</th>
@@ -27,7 +37,7 @@ export default {
     }
   },
   created () {
-    this.$http.get('/book')
+    this.$http.get('/book/')
       .then((res) => {
       this.rsp = res.body
     }, (error) => {
